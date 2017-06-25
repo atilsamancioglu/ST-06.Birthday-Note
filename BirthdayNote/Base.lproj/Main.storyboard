@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F2104" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BirthdayNote" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="birthday" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLO-Bn-vpF">
+                                <rect key="frame" x="69" y="120" width="236" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Uc4-lg-iCI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ss6-bf-kn3">
+                                <rect key="frame" x="69" y="169" width="236" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="1qc-dh-NhQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-ea-bo3">
+                                <rect key="frame" x="69" y="208" width="236" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nh-4Z-AGe">
+                                <rect key="frame" x="69" y="266" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Otb-Xk-zHM"/>
+                                    <constraint firstAttribute="width" constant="46" id="YLI-Lc-7ml"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r1A-lv-icN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk1-Cj-w1o">
+                                <rect key="frame" x="259" y="266" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="bnS-cE-HL2"/>
+                                </constraints>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OzG-iD-5B5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYb-2z-Ns0">
+                                <rect key="frame" x="69" y="73" width="236" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UQd-Vc-cSe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jLO-Bn-vpF" firstAttribute="leading" secondItem="ss6-bf-kn3" secondAttribute="leading" id="2Vm-K2-OAG"/>
+                            <constraint firstItem="DYb-2z-Ns0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="546-VY-u0Z"/>
+                            <constraint firstItem="jLO-Bn-vpF" firstAttribute="trailing" secondItem="ss6-bf-kn3" secondAttribute="trailing" id="7XI-4C-WRe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4nh-4Z-AGe" secondAttribute="bottom" constant="371" id="7ay-IM-73u"/>
+                            <constraint firstItem="DYb-2z-Ns0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="53" id="AIw-fZ-8Mh"/>
+                            <constraint firstItem="DYb-2z-Ns0" firstAttribute="leading" secondItem="jLO-Bn-vpF" secondAttribute="leading" id="FZ5-65-w5k"/>
+                            <constraint firstItem="4nh-4Z-AGe" firstAttribute="baseline" secondItem="mk1-Cj-w1o" secondAttribute="baseline" id="MeG-tc-ffE"/>
+                            <constraint firstItem="4nh-4Z-AGe" firstAttribute="top" secondItem="5zB-ea-bo3" secondAttribute="bottom" constant="27" id="RcD-09-Azw"/>
+                            <constraint firstItem="ss6-bf-kn3" firstAttribute="top" secondItem="jLO-Bn-vpF" secondAttribute="bottom" constant="19" id="XHW-sL-AOY"/>
+                            <constraint firstItem="DYb-2z-Ns0" firstAttribute="trailing" secondItem="jLO-Bn-vpF" secondAttribute="trailing" id="bTT-pY-Y2K"/>
+                            <constraint firstItem="ss6-bf-kn3" firstAttribute="trailing" secondItem="5zB-ea-bo3" secondAttribute="trailing" id="k2q-9G-ZDz"/>
+                            <constraint firstItem="jLO-Bn-vpF" firstAttribute="top" secondItem="DYb-2z-Ns0" secondAttribute="bottom" constant="17" id="ktk-SA-mQO"/>
+                            <constraint firstItem="DYb-2z-Ns0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="mhe-Xp-LZ4"/>
+                            <constraint firstItem="5zB-ea-bo3" firstAttribute="top" secondItem="ss6-bf-kn3" secondAttribute="bottom" constant="8" symbolic="YES" id="q8L-bX-v7K"/>
+                            <constraint firstItem="ss6-bf-kn3" firstAttribute="leading" secondItem="5zB-ea-bo3" secondAttribute="leading" id="qUe-V7-UKL"/>
+                            <constraint firstItem="5zB-ea-bo3" firstAttribute="leading" secondItem="4nh-4Z-AGe" secondAttribute="leading" id="x0R-DD-cZM"/>
+                            <constraint firstItem="5zB-ea-bo3" firstAttribute="trailing" secondItem="mk1-Cj-w1o" secondAttribute="trailing" id="yHO-8a-ky5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="birthdayInput" destination="jLO-Bn-vpF" id="Ufu-IB-0Jh"/>
+                        <outlet property="birthdayLabel" destination="5zB-ea-bo3" id="23o-2R-xpF"/>
+                        <outlet property="nameInput" destination="DYb-2z-Ns0" id="7D7-PK-XVk"/>
+                        <outlet property="nameLabel" destination="ss6-bf-kn3" id="piZ-fF-YH3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
